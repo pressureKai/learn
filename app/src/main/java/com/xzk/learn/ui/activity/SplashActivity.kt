@@ -1,4 +1,4 @@
-package com.xzk.learn
+package com.xzk.learn.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
