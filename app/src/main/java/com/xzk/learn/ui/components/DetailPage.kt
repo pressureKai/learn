@@ -18,7 +18,7 @@ import com.xzk.learn.ui.theme.Shapes
 @SuppressLint("NotConstructor")
 @Composable
 fun DetailPage() {
-  //  Color bgColor = Color.getBackgroundDisplayMode();
+    Color bgColor = Color.getBackgroundDisplayMode();
     Column(
         modifier = Modifier.fillMaxSize().background(Color.White,Shapes.large).height(100.dp),
         verticalArrangement = Arrangement.Center,
