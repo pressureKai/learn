@@ -4,6 +4,7 @@ import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.xzk.learn.entry.Category
@@ -22,7 +23,7 @@ fun MyTabBar(
             Tab(
                 selected = index == selectedTabIndex,
                 onClick = { onTabClicked(index, category) },
-                text = { Text(category.name.uppercase()) }
+                text = { Text(category.name.uppercase(), color = Color.Black) }
             )
         }
     }

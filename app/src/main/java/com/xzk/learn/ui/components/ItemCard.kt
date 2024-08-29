@@ -44,6 +44,7 @@ fun ItemCard(item: Item, callback: (item: Item) -> Unit) {
                 modifier = Modifier
                     .padding(8.dp, 0.dp, 8.dp, 0.dp),
 //                fontWeight = FontWeight.Bold
+                color = Color.Black
             )
 
         }
