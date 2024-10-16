@@ -1,9 +1,16 @@
 package com.xzk.learn.ui.components
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.requiredWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -17,13 +24,24 @@ fun MyTabBar(
 ) {
     ScrollableTabRow(
         selectedTabIndex = selectedTabIndex,
+        indicator = { tabPositions ->
+            //自定义指示器
+            TabRowDefaults.SecondaryIndicator(
+                Modifier
+                    .tabIndicatorOffset(tabPositions[selectedTabIndex])
+                    .clip(RoundedCornerShape(15.dp)),
+                color = Color.Black
+            )
+        },
+        modifier = Modifier.background(Color.White),
         edgePadding = 0.dp
     ) {
         categories.forEachIndexed { index, category ->
             Tab(
                 selected = index == selectedTabIndex,
                 onClick = { onTabClicked(index, category) },
-                text = { Text(category.name.uppercase(), color = Color.Black) }
+                text = { Text(category.name.uppercase(), color = Color.Black) },
+                modifier = Modifier.background(Color.White)
             )
         }
     }
@@ -36,11 +54,7 @@ fun SyncedTabBarPreview() {
 
     MyTabBar(
         categories = mutableListOf(
-            Category("Category 1"),
-            Category("Category 2"),
-            Category("Category 3"),
-            Category("Category 4"),
-            Category("Category 5"),
+            Category("Home"),
         ),
         selectedTabIndex = selectedIndex
     ) { index, _ ->

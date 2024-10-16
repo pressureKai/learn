@@ -1,6 +1,7 @@
 package com.xzk.learn.ui.components
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
@@ -36,6 +38,7 @@ fun MainPage(bottomPadding: Dp,  callback: (item: Item) -> Unit): Density {
         // padding : left,top,right,bottom
         modifier = Modifier
             .fillMaxSize()
+            .background(Color.White)
             .padding(0.dp, 0.dp, 0.dp, bottomPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,

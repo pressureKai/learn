@@ -1,6 +1,5 @@
 package com.xzk.learn.ui.components
 
-import android.os.Looper
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,13 +19,13 @@ fun ItemCategory(
     Column(
         modifier = Modifier.padding(horizontal = 16.dp)
     ) {
+        Spacer(Modifier.height(8.dp))
         Text(category.name, fontSize = 18.sp)
         Spacer(Modifier.height(8.dp))
         Column(
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // category.listOfItems.forEach  遍历所有子数据项
             category.listOfItems.forEach {
                 ItemCard(item = it,callback)
             }

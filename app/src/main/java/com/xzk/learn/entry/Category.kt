@@ -8,8 +8,8 @@ class Category(val name: String, vararg item: Item) {
 // summary 概要
 val dummyCategories = mutableListOf(
     Category(
-        "博客主页",
-        Item("博客主页","https://pressurekai.github.io/","博客","博客主页", arrayListOf()),
+        "Home",
+        Item("Home","https://pressurekai.github.io/","博客","博客主页", arrayListOf()),
     ),
     Category(
         "C++",
@@ -321,12 +321,7 @@ val dummyCategories = mutableListOf(
      *            51) -L dir 在dir目录中搜索动态库
      *                gcc main.c -o main -linc -L./
 
-     *
-     *
-     *
-     *
-     *
-     *
+
      *
      *    手动分界线--------- https://www.bilibili.com/video/BV1Hh4y1t76g/?spm_id_from=333.788&vd_source=f4f4350ec2de6a5e49222861f7129bae ----- Ble系列课
      *

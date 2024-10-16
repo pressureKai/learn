@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdk 34
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    namespace 'com.zzhoujay.richtext'
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'com.zzhoujay.markdown:markdown:1.0.5'
+    implementation 'com.jakewharton:disklrucache:2.0.2'
+    implementation 'androidx.annotation:annotation:1.8.2'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

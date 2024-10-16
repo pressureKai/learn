@@ -27,5 +27,6 @@ fun DetailPage() {
         Text(text = "详情页面")
 
 
+
     }
 }
