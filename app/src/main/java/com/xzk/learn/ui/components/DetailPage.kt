@@ -33,8 +33,7 @@ fun DetailPage() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White, Shapes.large)
-            .height(100.dp),
+            .background(Color.White, Shapes.large),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -43,10 +42,10 @@ fun DetailPage() {
              textView.setTextColor(LocalContext.getColor(R.color.black))
              textView.text = "LocalText"
              textView
-        }, modifier = Modifier.height(200.dp),{
+        }, modifier = Modifier,{
 
             it.setTextColor(LocalContext.getColor(R.color.black))
-            it.text = "LocalText"
+            it.text = readRawResource(LocalContext, R.raw.hello)
             RichText.fromMarkdown(readRawResource(LocalContext, R.raw.hello)).into(it)
 
         })

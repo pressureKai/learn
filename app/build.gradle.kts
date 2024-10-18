@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.config.JvmAnalysisFlags.useIR
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -133,7 +131,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
+    val spiderMan = "v1.2.0"
+    implementation ("com.github.simplepeng.SpiderMan:spiderman:${spiderMan}")
 
     //引入本地richText模块
     implementation(project(":richtext"))
