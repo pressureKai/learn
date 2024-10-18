@@ -73,6 +73,8 @@ dependencies {
 
 
 
+    //
+
     //lottie动画库-------start
     implementation ("com.airbnb.android:lottie:6.0.0")
     implementation ("com.airbnb.android:lottie-compose:6.0.0")
@@ -132,5 +134,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+
+    //引入本地richText模块
+    implementation(project(":richtext"))
 
 }
