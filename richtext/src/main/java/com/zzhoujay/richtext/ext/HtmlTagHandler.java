@@ -20,6 +20,8 @@ import java.util.Stack;
  */
 public class HtmlTagHandler implements Html.TagHandler {
 
+
+    private static final int background_color = Color.parseColor("#FFFFFF");
     private static final int code_color = Color.parseColor("#F0F0F0");
     private static final int h1_color = Color.parseColor("#333333");
 
@@ -71,7 +73,7 @@ public class HtmlTagHandler implements Html.TagHandler {
     private void reallyHandler(int start, int end, String tag, Editable out, XMLReader reader) {
         switch (tag.toLowerCase()) {
             case "code":
-                CodeSpan cs = new CodeSpan(code_color);
+                CodeSpan cs = new CodeSpan(background_color,code_color);
                 out.setSpan(cs, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 break;
             case "ol":
@@ -94,7 +96,7 @@ public class HtmlTagHandler implements Html.TagHandler {
                 if (textView == null) {
                     return;
                 }
-                MarkDownBulletSpan bulletSpan = new MarkDownBulletSpan(list.size() - 1, h1_color, i, textView);
+                MarkDownBulletSpan bulletSpan = new MarkDownBulletSpan(list.size() - 1, h1_color, i);
                 out.setSpan(bulletSpan, start, out.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 break;
         }

@@ -26,3 +26,4 @@ dependencyResolutionManagement {
 rootProject.name = "learn"
 include(":app")
 include(":richtext")
+include(":markdown")

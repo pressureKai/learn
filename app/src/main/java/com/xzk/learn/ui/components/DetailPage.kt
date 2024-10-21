@@ -2,6 +2,8 @@ package com.xzk.learn.ui.components
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.widget.TextView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -45,8 +47,10 @@ fun DetailPage() {
         }, modifier = Modifier,{
 
             it.setTextColor(LocalContext.getColor(R.color.black))
+
             it.text = readRawResource(LocalContext, R.raw.hello)
             RichText.fromMarkdown(readRawResource(LocalContext, R.raw.hello)).into(it)
+
 
         })
     }
