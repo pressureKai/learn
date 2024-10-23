@@ -2,15 +2,13 @@ package com.xzk.learn.ui.components
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Handler
-import android.os.Looper
 import android.widget.TextView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,8 +28,9 @@ import java.io.InputStreamReader
 @Composable
 fun DetailPage() {
 
-    val LocalContext = LocalContext.current
-  //  Color bgColor = Color.getBackgroundDisplayMode();
+    val context = LocalContext.current
+
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -39,19 +38,22 @@ fun DetailPage() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.statusBarsPadding())
         AndroidView({
-             val textView = TextView(LocalContext)
-             textView.setTextColor(LocalContext.getColor(R.color.black))
+             val textView = TextView(context)
+             textView.setTextColor(context.getColor(R.color.black))
              textView.text = "LocalText"
              textView
         }, modifier = Modifier,{
-
-            it.setTextColor(LocalContext.getColor(R.color.black))
-
-            it.text = readRawResource(LocalContext, R.raw.hello)
-            RichText.fromMarkdown(readRawResource(LocalContext, R.raw.hello)).into(it)
-
-
+            // 设置 TextView 文本内容,使用 requestLayout函数更新布局后
+            it.setTextColor(context.getColor(R.color.black))
+            it.text = readRawResource(context, R.raw.hello)
+            it.setPadding(10,0,10,0)
+            it.requestLayout()
+            it.post {
+                // 布局更改生效后,设置markdown数据
+                RichText.fromMarkdown(readRawResource(context, R.raw.hello)).into(it)
+            }
         })
     }
 }

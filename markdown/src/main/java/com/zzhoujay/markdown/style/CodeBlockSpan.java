@@ -1,6 +1,5 @@
 package com.zzhoujay.markdown.style;
 
-import android.app.Application;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -8,8 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.style.LineHeightSpan;
 import android.text.style.ReplacementSpan;
+import android.util.Log;
 import android.util.Pair;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +54,7 @@ public class CodeBlockSpan extends ReplacementSpan implements LineHeightSpan {
             }
         }
 
+
         paint.setTextSize(size);
         return mWidth;
     }
@@ -99,13 +99,24 @@ public class CodeBlockSpan extends ReplacementSpan implements LineHeightSpan {
 
     private int getTextInLineLen(CharSequence text, int start, int end, Paint paint) {
         int e = start;
-        while (paint.measureText(text, start, e) < mWidth - PADDING * 2) {
-            e++;
+        int length = text.length();
+        if(length == 0){
+            return 0;
+        }
+        float width = 0;
+        for(int i = start; i < end;i++){
+            float v = 0;
+            v = paint.measureText(text, i, i + 1);
+            width += v;
+            if( width < mWidth - PADDING * 2){
+                e++;
+            }
             if (e > end) {
                 break;
             }
         }
-        return e - 1;
+        Log.e("zzhou", text + "start is " + start+ " end is "+ end + " mWidth - PADDING * 2 is "+(mWidth - PADDING * 2) + " result is "+ (e-1)+ "\n");
+        return e;
     }
 
     private int getTextInLineLenInRange(CharSequence text, int start, int end, int rs, int re, Paint paint) {
@@ -113,12 +124,24 @@ public class CodeBlockSpan extends ReplacementSpan implements LineHeightSpan {
         if (rs > end ) {
             return end;
         }
-        while (paint.measureText(text, start, e) < mWidth - PADDING * 2) {
-            e++;
+
+        int length = text.length();
+        if(length == 0){
+            return 0;
+        }
+        float width = 0;
+        for(int i = start; i < e;i++){
+            float v = 0;
+            v = paint.measureText(text, i, i + 1);
+            width += v;
+            if( width < mWidth - PADDING * 2){
+                e++;
+            }
             if (e > end || e > re) {
                 break;
             }
         }
+
 
         return e - 1;
     }
@@ -134,6 +157,7 @@ public class CodeBlockSpan extends ReplacementSpan implements LineHeightSpan {
             count = l - temp;
             lines.add(new Pair<>(temp, l));
         }
+
         return lines;
     }
 

@@ -295,8 +295,10 @@ public class StyleBuilderImpl implements StyleBuilder {
     private int getTextViewRealWidth() {
         TextView textView = textViewWeakReference.get();
         if (textView != null) {
+            Log.e("getTextViewRealWidth",(textView.getWidth() - textView.getPaddingRight() - textView.getPaddingLeft())+"");
             return textView.getWidth() - textView.getPaddingRight() - textView.getPaddingLeft();
         }
+        Log.e("getTextViewRealWidth",0 +" !!! ");
         return 0;
     }
 
