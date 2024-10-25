@@ -31,7 +31,6 @@ fun SettingPage(bottomPadding:Dp) {
     val state by rememberPTQBookPageViewState(pageCount = 100)
 
     Column(
-        // padding : left,top,right,bottom
         modifier = Modifier
             .fillMaxSize()
             .padding(0.dp, 0.dp, 0.dp, bottomPadding),

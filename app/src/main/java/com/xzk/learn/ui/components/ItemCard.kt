@@ -27,7 +27,7 @@ fun ItemCard(item: Item, callback: (item: Item) -> Unit) {
             .fillMaxWidth()
             .defaultMinSize(minHeight = 64.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(),
+        elevation = CardDefaults.cardElevation(6.dp),
     ) {
         Column(
             modifier = Modifier
@@ -40,10 +40,9 @@ fun ItemCard(item: Item, callback: (item: Item) -> Unit) {
         ) {
             Text(
                 item.name, textAlign = TextAlign.Left,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 modifier = Modifier
                     .padding(8.dp, 0.dp, 8.dp, 0.dp),
-                fontWeight = FontWeight.Bold,
                 color = Color.Black
             )
 

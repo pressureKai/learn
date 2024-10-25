@@ -19,12 +19,13 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.xzk.learn.R
 import com.xzk.learn.ui.theme.Shapes
 import com.zzhoujay.richtext.RichText
+import com.zzhoujay.richtext.callback.DrawableGetter
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 
 
-@SuppressLint("SetTextI18n")
+@SuppressLint("SetTextI18n", "UseCompatLoadingForDrawables")
 @Composable
 fun DetailPage() {
 
@@ -52,7 +53,12 @@ fun DetailPage() {
             it.requestLayout()
             it.post {
                 // 布局更改生效后,设置markdown数据
-                RichText.fromMarkdown(readRawResource(context, R.raw.hello)).into(it)
+                RichText
+                    .fromMarkdown(readRawResource(context, R.raw.mine))
+                    .errorImage(DrawableGetter { _, _, _ ->
+                         context.getDrawable(R.drawable.ic_launcher_foreground)
+                    })
+                    .into(it)
             }
         })
     }
