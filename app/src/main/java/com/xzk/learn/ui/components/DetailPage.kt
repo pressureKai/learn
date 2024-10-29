@@ -48,13 +48,13 @@ fun DetailPage() {
         }, modifier = Modifier,{
             // 设置 TextView 文本内容,使用 requestLayout函数更新布局后
             it.setTextColor(context.getColor(R.color.black))
-            it.text = readRawResource(context, R.raw.hello)
+            it.text = readRawResource(context, R.raw.mn)
             it.setPadding(10,0,10,0)
             it.requestLayout()
             it.post {
                 // 布局更改生效后,设置markdown数据
                 RichText
-                    .fromMarkdown(readRawResource(context, R.raw.mine))
+                    .fromMarkdown(readRawResource(context, R.raw.mn))
                     .errorImage(DrawableGetter { _, _, _ ->
                          context.getDrawable(R.drawable.ic_launcher_foreground)
                     })
