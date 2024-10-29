@@ -45,6 +45,7 @@ fun ItemCategory(
                     ItemCard(item = it,callback)
                 }
             }
+            Spacer(Modifier.height(8.dp))
         }
     }
 

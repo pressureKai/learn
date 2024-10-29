@@ -23,42 +23,31 @@ import ptq.mpga.ptqbookpageview.widget.PTQBookPageView
 import ptq.mpga.ptqbookpageview.widget.rememberPTQBookPageViewState
 
 
-// Compose 书籍翻页
-//https://github.com/FantasticPornTaiQiang/PTQFlipper
-
 @SuppressLint("NotConstructor")
 @Composable
-fun SettingPage(bottomPadding:Dp) {
-    val state by rememberPTQBookPageViewState(pageCount = 100)
+fun BookListPage(bottomPadding:Dp) {
 
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(Color.White)
             .padding(0.dp, 0.dp, 0.dp, bottomPadding),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // 占位空间控件 https://blog.csdn.net/sange77/article/details/126426668
-        //  TabLayout + RecyclerView 联动
-        PTQBookPageView(state = state) {
-            contents { currentPage, refresh ->
-                Box(modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.White)) {
-
-                    //任何非动态的自定义内容
-                    Column {
-                        Text("\ncurrentPage is : $currentPage")
-                        Text("currentPage is : $currentPage")
-                    }
 
 
-                }
+        Spacer(modifier = Modifier.statusBarsPadding())
 
-                refresh()
-            }
+        Row {
+
         }
+
+
+
+
         Spacer(modifier = Modifier.navigationBarsPadding())
+
 
     }
 

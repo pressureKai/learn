@@ -4,6 +4,8 @@ pluginManagement {
         maven ("https://maven.aliyun.com/repository/public/" )
         maven ("https://maven.aliyun.com/repository/google/")
         maven ("https://maven.aliyun.com/repository/jcenter/")
+        maven { setUrl("https://maven.aliyun.com/nexus/content/groups/public/") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
 
         google()
         mavenCentral()
@@ -17,6 +19,9 @@ dependencyResolutionManagement {
         maven ("https://maven.aliyun.com/repository/public/" )
         maven ("https://maven.aliyun.com/repository/google/")
         maven ("https://maven.aliyun.com/repository/jcenter/")
+        maven { setUrl("https://maven.aliyun.com/nexus/content/groups/public/") }
+        maven { setUrl("https://maven.aliyun.com/repository/gradle-plugin") }
+
         google()
         mavenCentral()
         maven("https://jitpack.io")

@@ -41,6 +41,7 @@ import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.xzk.learn.encode
 import com.xzk.learn.entry.HiltDemoData
+import com.xzk.learn.ui.components.BookListPage
 import com.xzk.learn.ui.components.DetailPage
 import com.xzk.learn.ui.components.MainPage
 import com.xzk.learn.ui.components.SettingPage
@@ -52,11 +53,6 @@ import javax.inject.Inject
 
 
 //https://www.cnblogs.com/stars-one/p/17154864.html 代码参考链接 NavigationBar
-// 在MainPage页面中实现
-//  1. 网络中加载一个txt文件解析json,渲染在页面上、跳转至webView详情页
-//  2. json 数据结构为 技术分类 - 技术阶段（基础、进阶） - 具体技术  - 技术详情 。
-
-
 // compose 点击事件处理
 // https://blog.csdn.net/pepsimaxin/article/details/135742686
 
@@ -243,7 +239,7 @@ class MainActivity : ComponentActivity() {
                     val age = navBackStackEntry.arguments?.getInt("age")
                     Log.e("MainActivity", "id is $id age is $age")
                     //通过参数传递给下一个页面
-                    SettingPage(innerPadding.calculateBottomPadding())
+                    BookListPage(innerPadding.calculateBottomPadding())
                 }
             }
 

@@ -5,6 +5,7 @@ plugins {
     kotlin("kapt")
     // hilt 插件
     id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
 }
 
 
@@ -49,7 +50,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.9"
     }
     packaging {
         resources {
@@ -68,10 +69,6 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
 
-
-
-
-    //
 
     //lottie动画库-------start
     implementation ("com.airbnb.android:lottie:6.0.0")
@@ -136,5 +133,19 @@ dependencies {
 
     //引入本地richText模块
     implementation(project(":richtext"))
+
+
+
+    // room - start
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-paging:2.6.1")
+    //如何使用ksp
+    //https://blog.csdn.net/ljp345775/article/details/139763404
+    ksp("androidx.room:room-compiler:2.6.1")
+    // rom - end
+
+
+
 
 }
