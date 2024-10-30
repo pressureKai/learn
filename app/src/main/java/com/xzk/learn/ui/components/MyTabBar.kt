@@ -3,6 +3,7 @@ package com.xzk.learn.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
 import androidx.compose.material3.TabRowDefaults
@@ -34,7 +35,11 @@ fun MyTabBar(
             )
         },
         modifier = Modifier.background(Color.White),
-        edgePadding = 0.dp
+        edgePadding = 0.dp,
+        containerColor = Color.White,
+        divider = {
+            HorizontalDivider(color = Color.White)
+        }
     ) {
         categories.forEachIndexed { index, category ->
             Tab(
