@@ -28,6 +28,9 @@ val dummyCategories = mutableListOf(
         Item("Compose博客园入门教程","https://www.cnblogs.com/sixrain/p/18036442","Compose博客园入门教程","Compose博客园入门教程", arrayListOf()),
         Item("Room数据库使用","https://juejin.cn/post/7358347776490913855","Room数据库使用并实现搜索记录功能","Room数据库使用并实现搜索记录功能", arrayListOf()),
         Item("KSP插件使用","https://blog.csdn.net/ljp345775/article/details/139763404","KSP插件使用","KSP插件使用", arrayListOf()),
+        Item("Compose高德地图的使用","https://blog.csdn.net/m0_75235064/article/details/142397824","Compose高德地图的使用","Compose高德地图的使用", arrayListOf()),
+        Item("Image控件的使用","https://blog.csdn.net/weixin_41648633/article/details/139052871","Image控件的使用","Image控件的使用", arrayListOf()),
+        Item("Scaffold 脚手架使用","https://zhuanlan.zhihu.com/p/629505057","Scaffold 脚手架使用","Scaffold 脚手架使用", arrayListOf()),
 
         ),
     Category(
