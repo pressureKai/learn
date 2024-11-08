@@ -31,6 +31,12 @@ val dummyCategories = mutableListOf(
         Item("Compose高德地图的使用","https://blog.csdn.net/m0_75235064/article/details/142397824","Compose高德地图的使用","Compose高德地图的使用", arrayListOf()),
         Item("Image控件的使用","https://blog.csdn.net/weixin_41648633/article/details/139052871","Image控件的使用","Image控件的使用", arrayListOf()),
         Item("Scaffold 脚手架使用","https://zhuanlan.zhihu.com/p/629505057","Scaffold 脚手架使用","Scaffold 脚手架使用", arrayListOf()),
+        Item("抽屉布局的使用","https://developer.android.google.cn/develop/ui/compose/components/drawer?hl=zh-cn","抽屉布局的使用","抽屉布局的使用", arrayListOf()),
+        Item("Jetpack Compose中的LaunchedEffect与rememberCoroutineScope","https://blog.csdn.net/u011897062/article/details/131243852","Jetpack Compose中的LaunchedEffect与rememberCoroutineScope","Jetpack Compose中的LaunchedEffect与rememberCoroutineScope", arrayListOf()),
+        Item("Compose ViewModel 的使用","https://blog.csdn.net/userhu2012/article/details/134169733","Compose ViewModel 的使用","Compose ViewModel 的使用", arrayListOf()),
+        Item("Compose 设置控件的可见性","https://segmentfault.com/q/1010000043179570/a-1020000043179572","Compose 设置控件的可见性","Compose 设置控件的可见性", arrayListOf()),
+
+
 
         ),
     Category(
